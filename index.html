@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Erica — Dashboard</title>
+</head>
+<body>
+
+<input type="checkbox" id="sideToggle">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <label for="sideToggle" class="close-btn">
+    <i class="fa-solid fa-xmark"></i>
+  </label>
+
+  <a href="#home" class="sidebar-profile home-link">
+  <img src="profile.JPG" class="profile-img">
+  <h3>Erica</h3>
+  <p>BS CA Student</p>
+</a>
+
+  <nav class="side-nav">
+    <a href="#about"><i class="fa-solid fa-user"></i> About Me</a>
+    <a href="#interest"><i class="fa-solid fa-heart"></i> Interest</a>
+    <a href="#forkeeps"><i class="fa-solid fa-star"></i> For Keeps</a>
+    <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="dashboard">
+
+<header class="top-header">
+  <label for="sideToggle" class="logo-btn">erica</label>
+</header>
+
+<!-- HOME (MUST BE LAST) -->
+<section id="home" class="home section">
+  <div class="home-card">
+    <h1>Hola! It’s <span>Erica</span> ✨</h1>
+    <p>Let’s dive in and get to know me more😊</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="content-grid section">
+  <div class="card">
+    <h3>Info</h3>
+    <p><strong>Full Name:</strong> Erica Beth H. Limosnero</p>
+    <p><strong>Birthdate:</strong> November 7, 2006</p>
+    <p><strong>Zodiac Sign:</strong> ♏Scorpio</p>
+    <p><strong>MBTI:</strong> 🌿INFP</p>
+    <p><strong>Favorite Color:</strong> 🟧Orange</p>
+  </div>
+
+  <div class="card">
+    <h3>Where I'm From</h3>
+    <p><strong>Jimenez, Misamis Occidental</strong></p>
+    <p>Also known as "heritage town" in the Philippines, famous for its historic architecture, including many ancestral houses and the coral-stone Saint John the Baptist Parish Church</p>
+    <img src="jimenez.png" class="card-img">
+  </div>
+
+  <div class="card">
+    <h3>I'm Currently</h3>
+    <p><strong>A Student at MSU-IIT</strong></p>
+    <p>I'm a first year student in MSU-IIT taking Bachelor in Science in Computer Application</p>
+    <img src="iit.png" class="card-img">
+  </div>
+</section>
+
+<!-- INTEREST -->
+<section id="interest" class="content-grid section">
+  <div class="card">
+    <h3>Music</h3>
+    <img src="2.png" class="card-img">
+    <img src="3.png" class="card-img">
+  </div>
+
+  <div class="card">
+    <h3>Movies</h3>
+    <img src="1.png" class="card-img">
+    <img src="4.png" class="card-img">
+  </div>
+
+  <div class="card">
+    <h3>Reading</h3>
+    <img src="6.png" class="card-img">
+    <img src="5.png" class="card-img">
+  </div>
+</section>
+
+<!-- FOR KEEPS -->
+<section id="forkeeps" class="content-grid section">
+  <div class="card">
+    <h3>Sunsets🌇</h3>
+    <img src="s.png" class="card-img">
+  </div>
+
+  <div class="card">
+    <h3>Life with them❤️‍🩹</h3>
+    <img src="f.png" class="card-img">
+  </div>
+</section>
+  
+<!-- CONTACT -->
+<section id="contact" class="content-grid section">
+  <div class="card">
+    <h3>📬 Contact</h3>
+    <p><strong>Facebook:</strong></p>
+    <a href="https://facebook.com/erica.limosnero83" target="_blank">
+      <i class="fab fa-facebook-square contact-icon"></i>
+    </a>
+    <p><strong>Email:</strong></p>
+    <a href="mailto:ericabeth.limosnero@g.msuiit.edu.ph">
+      <i class="fa-solid fa-envelope contact-icon"></i>
+    </a>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,264 @@
+/* ===================== RESET ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+}
+
+/* ===================== SIDEBAR TOGGLE ===================== */
+#sideToggle {
+  display: none;
+}
+
+/* ===================== SIDEBAR ===================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  padding: 35px 20px;
+  background: linear-gradient(135deg, #e3eed43f, #0f2a1d77);
+  backdrop-filter: blur(14px);
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.226);
+  transition: left 0.45s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  z-index: 1000;
+}
+
+/* Open sidebar */
+#sideToggle:checked ~ .sidebar {
+  left: 0;
+}
+
+/* ===================== CLOSE BUTTON ===================== */
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 22px;
+  color:#08442793;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* ===================== PROFILE ===================== */
+.sidebar-profile {
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+/* ===================== SIDE NAV ===================== */
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-nav a {
+  padding: 12px 14px;
+  background: #cbffe741;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.side-nav a:hover {
+  background: #08442793;
+  color: white;
+  transform: translateX(6px);
+}
+
+/* ===================== MAIN CONTENT ===================== */
+.dashboard {
+  flex: 1;
+  padding: 30px;
+  transition: margin-left 0.45s ease;
+}
+
+/* Push content when sidebar opens */
+#sideToggle:checked ~ .dashboard {
+  margin-left: 260px;
+}
+
+/* ===================== HEADER ===================== */
+.top-header {
+  margin-bottom: 30px;
+}
+
+.logo-btn {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background:  #b5c99960;
+  border-radius: 14px;
+  cursor: pointer;
+  width: fit-content;
+  transition: 0.3s;
+}
+
+.logo-btn:hover {
+  background: #08442793;
+  color: rgb(255, 255, 255);
+}
+
+/* ===================== GRID ===================== */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ===================== CARDS ===================== */
+.card {
+  background: linear-gradient(135deg, #e3eed481, #0f2a1d79);;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+  transition: 0.35s ease;
+}
+
+.card:hover {
+  transform: translateX(6px);
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 12px;
+}
+
+.image-box {
+  text-align: center;
+}
+
+/* ===================== CONTACT ICONS ===================== */
+.contact-icon {
+  font-size: 32px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+  color: linear-gradient(135deg, #e3eed479, #0f2a1d77);
+}
+
+/* ===================== HOME ===================== */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-card {
+  background:linear-gradient(135deg, #e3eed475, #0f2a1d77);
+  padding: 70px;
+  border-radius: 32px;
+  text-align: center;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.2);
+}
+
+.home-card h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.home-card h1 span {
+  color:linear-gradient(135deg, #e3eed47c, #0f2a1d80);
+}
+
+.home-card p {
+  margin-top: 12px;
+  font-size: 1.1rem;
+}
+
+/* ===================== SECTION VISIBILITY ===================== */
+.section {
+  display: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Home visible first */
+#home {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Show clicked section */
+.section:target {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide home when another section is clicked */
+body:has(.section:target:not(#home)) #home {
+  display: none;
+}
+
+/* ===================== AUTO-CLOSE SIDEBAR ON HOME ===================== */
+#home:target ~ .sidebar {
+  left: -260px;
+}
+
+#home:target ~ .dashboard {
+  margin-left: 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #sideToggle:checked ~ .dashboard {
+    margin-left: 0;
+  }
+
+  .home-card {
+    padding: 45px;
+  }
+
+  .home-card h1 {
+    font-size: 2.2rem;
+  }
+}
